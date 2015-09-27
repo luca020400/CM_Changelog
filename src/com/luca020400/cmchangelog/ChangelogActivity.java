@@ -58,9 +58,6 @@ public class ChangelogActivity extends Activity implements SwipeRefreshLayout.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.update_changelog:
-                UpdateChangelog();
-                break;
             case R.id.device_info:
                 DeviceInfo();
                 break;
