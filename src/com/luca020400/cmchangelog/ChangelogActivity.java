@@ -68,9 +68,9 @@ public class ChangelogActivity extends Activity implements SwipeRefreshLayout.On
 
     public void DeviceInfo() {
         String message = String.format("%s %s\n\n%s %s\n\n%s %s",
-                getString(R.string.devive_info_device), mDevice,
-                getString(R.string.devive_info_running), mCMVersion,
-                getString(R.string.devive_info_update_channel), mCMReleaseType);
+                getString(R.string.device_info_device), mDevice,
+                getString(R.string.device_info_running), mCMVersion,
+                getString(R.string.device_info_update_channel), mCMReleaseType);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setTitle(R.string.device_info)

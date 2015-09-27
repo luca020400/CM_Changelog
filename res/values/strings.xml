@@ -1,10 +1,9 @@
 <resources>
-    <string name="app_name">CM Changelog</string>
+    <string name="app_name" translatable="false">CM Changelog</string>
     <string name="device_info">Device Info</string>
     <string name="dialog_ok">OK</string>
-    <string name="devive_info_device">Device:</string>
-    <string name="devive_info_running">Running:</string>
-    <string name="devive_info_update_channel">Update Channel:</string>
-    <string name="update_changelog">Update Changelog</string>
+    <string name="device_info_device">Device:</string>
+    <string name="device_info_running">Version:</string>
+    <string name="device_info_update_channel">Update Channel:</string>
     <string name="data_connection_required">A data connection is required.</string>
 </resources>

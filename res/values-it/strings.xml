@@ -1,0 +1,8 @@
+<resources>
+    <string name="device_info">Info dispositivo</string>
+    <string name="dialog_ok">OK</string>
+    <string name="device_info_device">Dispositivo:</string>
+    <string name="device_info_running">Versione:</string>
+    <string name="device_info_update_channel">Canale aggiornamenti:</string>
+    <string name="data_connection_required">E\' richiesta una connessione dati</string>
+</resources>
