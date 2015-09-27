@@ -14,8 +14,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import org.cyanogenmod.changelog.misc.ChangelogTask;
 
 public class ChangelogActivity extends Activity {
@@ -26,7 +24,6 @@ public class ChangelogActivity extends Activity {
     private String mCyanogenMod;
     private String mCMReleaseType;
     private String mDevice;
-    private ArrayList<String> mOfficials = new ArrayList<>();
 
     public void onCreate(Bundle savedInstanceState) {
         _instance = this;
@@ -36,7 +33,7 @@ public class ChangelogActivity extends Activity {
         mCMVersion = SystemProperties.get("ro.cm.version");
         String[] version = mCMVersion.split("-");
         mCyanogenMod = version[0];
-        mCMReleaseType = version[2];
+        mCMReleaseType = SystemProperties.get("ro.cm.releasetype");
         mDevice = SystemProperties.get("ro.cm.device");
 
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
@@ -46,8 +43,6 @@ public class ChangelogActivity extends Activity {
             public void onRefresh() {
                 UpdateChangelog();
             }});
-        populateOfficial();
-        alertUnofficial(mCMReleaseType);
         UpdateChangelog();
     }
 
@@ -69,13 +64,6 @@ public class ChangelogActivity extends Activity {
         return true;
     }
 
-    public void populateOfficial() {
-        mOfficials.add("NIGHTLY");
-        mOfficials.add("YOG4P");
-        mOfficials.add("YNG4N");
-        mOfficials.add("XNG3C");
-    }
-
     public void DeviceInfo() {
         String message = String.format("%s %s\n\n%s %s\n\n%s %s",
                 getString(R.string.device_info_device), mDevice,
@@ -92,22 +80,6 @@ public class ChangelogActivity extends Activity {
 
         TextView messageView = (TextView) dialog.findViewById(android.R.id.message);
         messageView.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Small);
-    }
-
-    public void alertUnofficial(String version) {
-        int mshowunofficial = 0;
-        for (int i = 0; i < mOfficials.size(); i++){
-            if (version == mOfficials.get(i))
-                mshowunofficial++;
-        }
-        if (mshowunofficial <= 0) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this)
-                    .setTitle(R.string.unofficial_info)
-                    .setMessage(R.string.unofficial_mesasge)
-                    .setPositiveButton(R.string.dialog_ok, null);
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
-        }
     }
 
     public void UpdateChangelog() {
