@@ -3,13 +3,13 @@ package com.luca020400.cmchangelog.misc;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.luca020400.cmchangelog.ChangelogActivity;
 import com.luca020400.cmchangelog.ChangelogActivity.Change;
-import com.luca020400.cmchangelog.misc.ChangelogAdapter;
 import com.luca020400.cmchangelog.R;
 
 import org.json.JSONArray;
@@ -78,7 +78,11 @@ public class ChangelogTask extends AsyncTask<String, String, String> {
                 changelogActivity.startActivity(browserIntent);
             }
         });
-
-        changelogActivity.swipeRefreshLayout.setRefreshing(false);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                changelogActivity.swipeRefreshLayout.setRefreshing(false);
+            }
+        },500);
     }
 }

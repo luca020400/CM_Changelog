@@ -15,9 +15,8 @@ import android.widget.Toast;
 
 import com.luca020400.cmchangelog.misc.ChangelogTask;
 import com.luca020400.cmchangelog.misc.Cmd;
-import com.luca020400.cmchangelog.R;
 
-public class ChangelogActivity extends Activity implements SwipeRefreshLayout.OnRefreshListener {
+public class ChangelogActivity extends Activity {
     public static ChangelogActivity _instance;
     public SwipeRefreshLayout swipeRefreshLayout;
 
@@ -38,13 +37,13 @@ public class ChangelogActivity extends Activity implements SwipeRefreshLayout.On
         mDevice = version[3];
 
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
-        swipeRefreshLayout.setOnRefreshListener(this);
         swipeRefreshLayout.setColorSchemeResources(R.color.color_primary);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                UpdateChangelog();
+            }});
 
-        UpdateChangelog();
-    }
-
-    public void onRefresh() {
         UpdateChangelog();
     }
 
