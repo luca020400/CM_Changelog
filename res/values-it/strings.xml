@@ -5,4 +5,6 @@
     <string name="device_info_running">Versione:</string>
     <string name="device_info_update_channel">Canale aggiornamenti:</string>
     <string name="data_connection_required">E\' richiesta una connessione dati</string>
+    <string name="unofficial_info">Build non ufficial in uso</string>
+    <string name="unofficial_mesasge">Stai utilizzando una build non ufficiale, questo significa che il tuo dispositivo potrebbe non essere supportato.</string>
 </resources>

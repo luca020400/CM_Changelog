@@ -24,6 +24,9 @@ public class ChangelogActivity extends Activity {
     private String mCyanogenMod;
     private String mCMReleaseType;
     private String mDevice;
+    private int mReleases = 4;
+    private String[] mOfficials = new String[mReleases];
+    private boolean mUnofficial;
 
     public void onCreate(Bundle savedInstanceState) {
         _instance = this;
@@ -34,7 +37,7 @@ public class ChangelogActivity extends Activity {
         String[] version = mCMVersion.split("-");
         mCyanogenMod = version[0];
         mCMReleaseType = version[2];
-        mDevice = version[3];
+        mDevice = Cmd.exec("getprop ro.product.name");
 
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setColorSchemeResources(R.color.color_primary);
@@ -43,7 +46,8 @@ public class ChangelogActivity extends Activity {
             public void onRefresh() {
                 UpdateChangelog();
             }});
-
+        populateOfficial();
+        alertUnofficial(mCMReleaseType);
         UpdateChangelog();
     }
 
@@ -65,6 +69,16 @@ public class ChangelogActivity extends Activity {
         return true;
     }
 
+public void populateOfficial() {
+    /*
+     * Add new official releases here, also remember to update the array
+     */
+    mOfficials[0] = "NIGHTLY";
+    mOfficials[1] = "YOG4P";
+    mOfficials[2] = "YNG4N";
+    mOfficials[3] = "XNG3C";
+}
+
     public void DeviceInfo() {
         String message = String.format("%s %s\n\n%s %s\n\n%s %s",
                 getString(R.string.device_info_device), mDevice,
@@ -81,6 +95,22 @@ public class ChangelogActivity extends Activity {
 
         TextView messageView = (TextView) dialog.findViewById(android.R.id.message);
         messageView.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Small);
+    }
+
+    public void alertUnofficial(String version) {
+        int mshowunofficial = 0;
+        for (int i = 0; i < mReleases; i++){
+            if (version == mOfficials[i])
+                mshowunofficial++;
+        }
+        if (mshowunofficial <= 0){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                    .setTitle(R.string.unofficial_info)
+                    .setMessage(R.string.unofficial_mesasge)
+                    .setPositiveButton(R.string.dialog_ok, null);
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+        }
     }
 
     public void UpdateChangelog() {

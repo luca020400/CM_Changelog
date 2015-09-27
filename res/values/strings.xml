@@ -6,4 +6,6 @@
     <string name="device_info_running">Version:</string>
     <string name="device_info_update_channel">Update Channel:</string>
     <string name="data_connection_required">A data connection is required.</string>
+    <string name="unofficial_info">Running unofficial build</string>
+    <string name="unofficial_mesasge">You\'re using an unofficial build, this mean your device may not be supported.</string>
 </resources>
