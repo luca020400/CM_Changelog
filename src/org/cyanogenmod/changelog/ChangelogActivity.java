@@ -6,6 +6,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,7 +17,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import org.cyanogenmod.changelog.misc.ChangelogTask;
-import org.cyanogenmod.changelog.misc.Cmd;
 
 public class ChangelogActivity extends Activity {
     public static ChangelogActivity _instance;
@@ -33,11 +33,11 @@ public class ChangelogActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        mCMVersion = Cmd.exec("getprop ro.cm.version");
+        mCMVersion = SystemProperties.get("ro.cm.version");
         String[] version = mCMVersion.split("-");
         mCyanogenMod = version[0];
         mCMReleaseType = version[2];
-        mDevice = Cmd.exec("getprop ro.cm.device");
+        mDevice = SystemProperties.get("ro.cm.device");
 
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setColorSchemeResources(R.color.color_primary);
