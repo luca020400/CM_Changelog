@@ -1,4 +1,4 @@
-package com.luca020400.cmchangelog.misc;
+package org.cyanogenmod.changelog.misc;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.luca020400.cmchangelog.ChangelogActivity.Change;
-import com.luca020400.cmchangelog.R;
+import org.cyanogenmod.changelog.ChangelogActivity.Change;
+import org.cyanogenmod.changelog.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -52,4 +52,3 @@ public class ChangelogAdapter extends ArrayAdapter<Change>{
         return convertView;
     }
 }
-

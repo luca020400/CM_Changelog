@@ -1,4 +1,4 @@
-package com.luca020400.cmchangelog;
+package org.cyanogenmod.changelog;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,8 +13,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.luca020400.cmchangelog.misc.ChangelogTask;
-import com.luca020400.cmchangelog.misc.Cmd;
+import org.cyanogenmod.changelog.misc.ChangelogTask;
+import org.cyanogenmod.changelog.misc.Cmd;
 
 public class ChangelogActivity extends Activity {
     public static ChangelogActivity _instance;

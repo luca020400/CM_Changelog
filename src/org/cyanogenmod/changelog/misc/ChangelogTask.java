@@ -1,4 +1,4 @@
-package com.luca020400.cmchangelog.misc;
+package org.cyanogenmod.changelog.misc;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.luca020400.cmchangelog.ChangelogActivity;
-import com.luca020400.cmchangelog.ChangelogActivity.Change;
-import com.luca020400.cmchangelog.R;
+import org.cyanogenmod.changelog.ChangelogActivity;
+import org.cyanogenmod.changelog.ChangelogActivity.Change;
+import org.cyanogenmod.changelog.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -1,4 +1,4 @@
-package com.luca020400.cmchangelog.misc;
+package org.cyanogenmod.changelog.misc;
 
 import android.util.Log;
 

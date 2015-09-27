@@ -1,6 +1,6 @@
 <resources>
-    <color name="color_primary">#ff266aa6</color>
-    <color name="color_primary_dark">#ff185c98</color>
+    <color name="color_primary">#266aa6</color>
+    <color name="color_primary_dark">#185c98</color>
     <color name="teal_text">#009688</color>
     <color name="red_text">#ff5252</color>
     <color name="white">#fafafa</color>
