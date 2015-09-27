@@ -1,8 +1,0 @@
-# Gradle stuff
-build
-.gradle
-
-# Android Studio stuff
-.idea
-*.properties
-*.iml
