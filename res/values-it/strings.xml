@@ -1,10 +1,23 @@
 <resources>
+    <!-- UI Strings -->
     <string name="device_info">Info dispositivo</string>
-    <string name="dialog_ok">OK</string>
-    <string name="device_info_device">Dispositivo:</string>
-    <string name="device_info_running">Versione:</string>
-    <string name="device_info_update_channel">Canale aggiornamenti:</string>
     <string name="data_connection_required">E\' richiesta una connessione dati</string>
-    <string name="unofficial_info">Build non ufficial in uso</string>
+    <string name="dialog_ok">OK</string>
+
+    <!-- Info Dialog Strings -->
+    <string name="device_info_device">Dispositivo:</string>
+    <string name="device_info_running">Versione CM:</string>
+    <string name="device_info_update_channel">Canale aggiornamenti:</string>
+
+    <!-- Unofficial Dialog Strings -->
+    <string name="unofficial_info">Build non ufficiale</string>
     <string name="unofficial_mesasge">Stai utilizzando una build non ufficiale, questo significa che il tuo dispositivo potrebbe non essere supportato.</string>
+
+    <!-- Stable Dialog Strings -->
+    <string name="stable_info">Build stabile</string>
+    <string name="stable_mesasge">Stai utilizzando una build stabile. Quest\'app e\' fatta per fornire un changelog per le nightly</string>
+
+    <!-- Unknown Dialog Strings -->
+    <string name="unknown_info">Build sconosciuta</string>
+
 </resources>

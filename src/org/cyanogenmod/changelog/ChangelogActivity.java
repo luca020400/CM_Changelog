@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import org.cyanogenmod.changelog.misc.ChangelogTask;
 
 public class ChangelogActivity extends Activity {
@@ -24,6 +26,9 @@ public class ChangelogActivity extends Activity {
     private String mCyanogenMod;
     private String mCMReleaseType;
     private String mDevice;
+    private String alertTitle;
+    private String alertMessage;
+    private ArrayList<String> mStable = new ArrayList<>();
 
     public void onCreate(Bundle savedInstanceState) {
         _instance = this;
@@ -43,6 +48,7 @@ public class ChangelogActivity extends Activity {
             public void onRefresh() {
                 UpdateChangelog();
             }});
+        alertBuild();
         UpdateChangelog();
     }
 
@@ -64,15 +70,51 @@ public class ChangelogActivity extends Activity {
         return true;
     }
 
+    public void populateOfficial() {
+        mStable.add("YOG4P");
+        mStable.add("YNG4N");
+        mStable.add("XNG3C");
+    }
+
+    public void alertBuild() {
+        int checkBuild = 0;
+
+        if (!mCMReleaseType.toUpperCase().contains("NIGHTLY")){
+            if (mCMReleaseType.toUpperCase().contains("UNOFFICIAL")){
+                alertTitle = getString(R.string.unofficial_info);
+                alertMessage =  getString(R.string.unofficial_mesasge);
+            } else {
+                populateOfficial();
+                for (int i = 0; i< mStable.size(); i++) {
+                    if (mCMReleaseType == mStable.get(i)){
+                        alertTitle = getString(R.string.stable_info);
+                        alertMessage =  getString(R.string.stable_mesasge);
+                        checkBuild++;
+                    }
+                }
+                if (checkBuild == 0){
+                    alertTitle = getString(R.string.unknown_info);
+                    alertMessage = mCMReleaseType;
+                }
+            }
+            AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                .setTitle(alertTitle)
+                .setMessage(alertMessage)
+                .setPositiveButton(R.string.dialog_ok, null);
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+    }
+
     public void DeviceInfo() {
-        String message = String.format("%s %s\n\n%s %s\n\n%s %s",
+        alertMessage = String.format("%s %s\n\n%s %s\n\n%s %s",
                 getString(R.string.device_info_device), mDevice,
                 getString(R.string.device_info_running), mCMVersion,
                 getString(R.string.device_info_update_channel), mCMReleaseType);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setTitle(R.string.device_info)
-                .setMessage(message)
+                .setMessage(alertMessage)
                 .setPositiveButton(R.string.dialog_ok, null);
 
         AlertDialog dialog = builder.create();

@@ -1,11 +1,24 @@
 <resources>
+    <!-- UI Strings -->
     <string name="app_name" translatable="false">CM Changelog</string>
     <string name="device_info">Device Info</string>
-    <string name="dialog_ok">OK</string>
-    <string name="device_info_device">Device:</string>
-    <string name="device_info_running">Version:</string>
-    <string name="device_info_update_channel">Update Channel:</string>
     <string name="data_connection_required">A data connection is required.</string>
+    <string name="dialog_ok">OK</string>
+
+    <!-- Info Dialog Strings -->
+    <string name="device_info_device">Device:</string>
+    <string name="device_info_running">CM version:</string>
+    <string name="device_info_update_channel">Update Channel:</string>
+
+    <!-- Unofficial Dialog Strings -->
     <string name="unofficial_info">Running unofficial build</string>
     <string name="unofficial_mesasge">You\'re using an unofficial build, this mean your device may not be supported.</string>
+
+    <!-- Stable Dialog Strings -->
+    <string name="stable_info">Running stable build</string>
+    <string name="stable_mesasge">You\'re using a stable build. This app is designed to provide the changelog of nightly builds.</string>
+
+    <!-- Unknown Dialog Strings -->
+    <string name="unknown_info">Unknown build</string>
+
 </resources>
