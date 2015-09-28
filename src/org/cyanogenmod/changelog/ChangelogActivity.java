@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import org.cyanogenmod.changelog.misc.ChangelogTask;
 
 public class ChangelogActivity extends Activity {
-    public static ChangelogActivity _instance;
+    private static ChangelogActivity _instance;
     public SwipeRefreshLayout swipeRefreshLayout;
 
     private String mCMVersion;

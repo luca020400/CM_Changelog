@@ -37,7 +37,7 @@ public class ChangelogTask extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... urls) {
         ArrayList<Change> arrayOflog = new ArrayList<>();
-        adapter = new ChangelogAdapter(ChangelogActivity._instance, arrayOflog);
+        adapter = new ChangelogAdapter(ChangelogActivity.getInstance(), arrayOflog);
         try {
             String out = new Scanner(new URL(urls[0]).openStream(), "UTF-8").useDelimiter("\\A").next();
             JSONArray newJArray = new JSONArray(out);
