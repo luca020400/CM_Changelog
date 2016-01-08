@@ -8,6 +8,7 @@
     <!-- Toast -->
     <string name="data_connection_required">A data connection is required.</string>
     <!-- Action Menu -->
-    <string name="menu_refresh">Refresh</string>
     <string name="menu_device_info">Device Info</string>
+    <string name="menu_refresh">Refresh</string>
 </resources>
+

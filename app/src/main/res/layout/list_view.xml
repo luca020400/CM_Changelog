@@ -10,11 +10,10 @@
     android:paddingBottom="@dimen/changelog_bot_padding"
     android:background="@color/change_background_color">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:padding="8dp"
         >
 
@@ -25,7 +24,6 @@
             android:textAppearance="?android:attr/textAppearanceListItem"
             android:textStyle="bold"
             android:textColor="@color/change_title_color"
-            android:text="subject"
             />
         <TextView
             android:id="@+id/subject"
@@ -34,7 +32,6 @@
             android:layout_below="@id/project"
             android:textColor="@color/change_package_text_color"
             android:textAppearance="?android:attr/textAppearanceListItemSecondary"
-            android:text="package"
             />
 
         <TextView
@@ -45,7 +42,7 @@
             android:layout_alignParentEnd="true"
             android:textAppearance="?android:attr/textAppearanceListItemSecondary"
             android:textColor="@color/change_date_text_color"
-            android:text="date" />
+            />
 
     </RelativeLayout>
 </LinearLayout>

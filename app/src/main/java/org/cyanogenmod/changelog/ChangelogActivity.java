@@ -131,7 +131,7 @@ public class ChangelogActivity extends Activity implements SwipeRefreshLayout.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.device_info:
+            case R.id.menu_device_info:
                 deviceInfoDialog();
                 break;
             case R.id.menu_refresh:
@@ -163,7 +163,7 @@ public class ChangelogActivity extends Activity implements SwipeRefreshLayout.On
                 getString(R.string.device_info_update_channel), mCMReleaseType);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
-                .setTitle(R.string.device_info)
+                .setTitle(R.string.menu_device_info)
                 .setMessage(message)
                 .setPositiveButton(R.string.dialog_ok, null);
         AlertDialog dialog = builder.create();

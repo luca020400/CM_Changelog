@@ -1,9 +1,13 @@
 <resources>
-    <string name="device_info">Info dispositivo</string>
+    <!-- Info Dialog -->
     <string name="dialog_ok">OK</string>
     <string name="device_info_device">Dispositivo:</string>
     <string name="device_info_version">Versione:</string>
     <string name="device_info_update_channel">Canale aggiornamenti:</string>
-    <string name="data_connection_required">E\' richiesta una connessione dati</string>
+    <!-- Toast -->
+    <string name="data_connection_required">E\' richiesta una connessione dati.</string>
+    <!-- Action Menu -->
+    <string name="menu_device_info">Info dispositivo</string>
     <string name="menu_refresh">Aggiorna</string>
 </resources>
+
