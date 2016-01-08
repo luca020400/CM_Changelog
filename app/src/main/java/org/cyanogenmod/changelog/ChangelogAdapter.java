@@ -99,7 +99,6 @@ public class ChangelogAdapter extends RecyclerView.Adapter<ChangelogAdapter.View
      */
     public void clear() {
         mDataset.clear();
-        notifyDataSetChanged();
     }
 
     /**
@@ -108,7 +107,6 @@ public class ChangelogAdapter extends RecyclerView.Adapter<ChangelogAdapter.View
      */
     public void addAll(List<Change> list) {
         mDataset.addAll(list);
-        notifyDataSetChanged();
     }
 
     /**

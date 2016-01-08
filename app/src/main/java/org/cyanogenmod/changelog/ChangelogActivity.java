@@ -200,7 +200,6 @@ public class ChangelogActivity extends Activity implements SwipeRefreshLayout.On
 
             @Override
             protected void onPreExecute() {
-                super.onPreExecute();
                 if (mAdapter != null) mAdapter.clear();
                 mSwipeRefreshLayout.setRefreshing(true);
             }
@@ -231,8 +230,8 @@ public class ChangelogActivity extends Activity implements SwipeRefreshLayout.On
 
             @Override
             protected void onPostExecute(String urls) {
-                super.onPostExecute(urls);
                 mAdapter.addAll(mList);
+                mAdapter.notifyDataSetChanged();
                 // delay refreshing animation just for the show
                 new Handler().postDelayed(new Runnable() {
                     @Override
