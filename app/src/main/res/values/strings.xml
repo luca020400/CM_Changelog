@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name" translatable="false">CM Changelog</string>
-    <string name="device_info">Device Info</string>
+    <!-- Info Dialog -->
     <string name="dialog_ok">OK</string>
     <string name="device_info_device">Device:</string>
     <string name="device_info_version">Version:</string>
     <string name="device_info_update_channel">Update Channel:</string>
+    <!-- Toast -->
     <string name="data_connection_required">A data connection is required.</string>
+    <!-- Action Menu -->
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_device_info">Device Info</string>
 </resources>

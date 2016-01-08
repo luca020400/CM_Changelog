@@ -5,4 +5,5 @@
     <string name="device_info_version">Versione:</string>
     <string name="device_info_update_channel">Canale aggiornamenti:</string>
     <string name="data_connection_required">E\' richiesta una connessione dati</string>
+    <string name="menu_refresh">Aggiorna</string>
 </resources>

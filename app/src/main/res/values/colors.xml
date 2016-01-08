@@ -1,7 +1,11 @@
 <resources>
-    <color name="color_primary">#266aa6</color>
-    <color name="color_primary_dark">#185c98</color>
-    <color name="teal_text">#009688</color>
-    <color name="red_text">#ff5252</color>
-    <color name="black">#212121</color>
+    <!-- Theme colors -->
+    <color name="color_primary">#388E3C</color>
+    <color name="color_primary_dark">#1B5E20</color>
+    <color name="color_accent">#FF9100</color>
+    <!-- ListView colors -->
+    <color name="change_background_color">#fff</color>
+    <color name="change_title_color">@color/color_accent</color>
+    <color name="change_date_text_color">#FF6D00</color>
+    <color name="change_package_text_color">#dd000000</color>
 </resources>

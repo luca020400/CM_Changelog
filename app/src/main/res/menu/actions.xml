@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/device_info"
-        android:icon="@drawable/device_info"
+    <item
+        android:id="@+id/device_info"
         android:title="@string/device_info"
+        android:icon="@drawable/ic_info"
         android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_refresh"
+        android:title="@string/menu_refresh"
+        android:icon="@drawable/ic_renew"
+        android:showAsAction="ifRoom"
+        />
 </menu>
